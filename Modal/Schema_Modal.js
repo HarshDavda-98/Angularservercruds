@@ -2,18 +2,24 @@ const mongoose = require('mongoose')
 
 const Data = new mongoose.Schema({
     id:{
-        type:Number,
+        type:String,
+    },
+    Mobile:{
+        type:String,
+        required:true,
     },
     Name:{
         type:String,
+        required:true,
     },
     Discription:{
         type:String,
+        required:true,
     },
     Email:{
         type:String,
+        required:true,
     }
 });
-
 const UserDetails = mongoose.model("UserDetails",Data);
 module.exports = {UserDetails}
