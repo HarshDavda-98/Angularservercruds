@@ -28,13 +28,12 @@ const PostUserDetail = async (req, res) => {
   }
 };
  const DeleteUserDetail =async(req,res)=>{
-    if(UserDetails){
-     await UserDetails.findOneAndDelete({_id:req.params._id}).then(()=>{
-       res.status(200).send("Deleted");
-     });
-    }else{
-      res.status(501).send("Not Deleted");
-    }
+   if(UserDetails){
+       await UserDetails.findByIdAndDelete({_id:req.params._id})
+       res.status(200).send("delete")
+   }else {
+    res.status(503).send("Not deleted");
+  }
  }
  const PutUserDetail =async(req,res)=>{
   if (UserDetails) {
