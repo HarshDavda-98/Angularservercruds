@@ -9,5 +9,5 @@ route.put('/userData/:_id',PutUserDetail);
 route.get('/userData/:_id',GetUserDetailById);
 route.put('/userData/:_id',PutUserDetail);
 route.delete('/userData/:_id',DeleteUserDetail);
-    
+
 module.exports = route;

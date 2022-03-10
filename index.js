@@ -4,6 +4,8 @@ const  bodyParser =require("body-parser");
 const  cors =require("cors");
 const app = expresss();
 const Route = require('./Router/Routers')
+const dotenv = require("dotenv")  
+dotenv.config({path:"./config.env"});
 app.use(cors());
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true })); 
@@ -17,7 +19,7 @@ app.get('/',(req,res)=>{
 })
 app.use(Route);
 const port = process.env.PORT || 1988
-const Port = "mongodb+srv://Nodejstutorial:Nodejstutorial123@cluster0.0y601.mongodb.net/test?retryWrites=true&w=majority"
+const Port = process.env.DATABASE;
 
 mongoose.connect (Port,()=>{console.log("mongoose connected")}).then(()=>{
 }).catch((err)=>console.log(err));

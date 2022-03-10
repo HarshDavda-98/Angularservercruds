@@ -5,7 +5,7 @@ const Data = new mongoose.Schema({
         type:String,
     },
     Mobile:{
-        type:String,
+        type:Number,
         required:true,
     },
     Name:{

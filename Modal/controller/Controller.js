@@ -30,10 +30,8 @@ const PostUserDetail = async (req, res) => {
  const DeleteUserDetail =async(req,res)=>{
    if(UserDetails){
        await UserDetails.findByIdAndDelete({_id:req.params._id})
-       res.status(200).send("delete")
-   }else {
-    res.status(503).send("Not deleted");
-  }
+      //  res.status(200).send("delete")
+   }
  }
  const PutUserDetail =async(req,res)=>{
   if (UserDetails) {
